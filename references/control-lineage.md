@@ -6,18 +6,26 @@ SP 800-171 requirements are compressed. They were written as short, outcome-styl
 
 So whenever the question is what a requirement *means* or *requires* — not only when it looks ambiguous — the move is: **find the parent control, read its Discussion, and reason from the intent.** That is not freelancing. NIST built 800-171 by tailoring 800-53, published the mapping, and the discussion text is the closest thing to an official statement of what the requirement is trying to accomplish.
 
-**This is bundled — use it, don't recall it.**
+**This is bundled — use it, don't recall it. Two tracks:**
 
-- `references/sources/sp-800-171r2-to-800-53-mapping.md` — SP 800-171 Rev 2 Appendix D (Tables D-1–D-14), the parent SP 800-53 control(s) for each of the 110 requirements. Look the requirement up here first.
-- `references/sources/sp-800-53-rev5-cui-parents.md` — verbatim *Control* text and *Discussion* for every one of those parent controls (SP 800-53 Rev 5, from NIST's OSCAL catalog). Quote the Discussion from here and cite it by control ID and revision.
-- For a control outside that set (Level 3 / 800-172 lineage, or a related control named inside a Discussion), fetch it from the NIST CPRT catalog (`csrc.nist.gov/projects/cprt`) or SP 800-53 Rev 5 on `csrc.nist.gov`, and say you did.
+**Default — SP 800-171 Rev 2 → SP 800-53 Rev 4** (the CMMC Level 2 basis):
 
-An interpretive answer that never names or quotes the parent 800-53 control is incomplete.
+- `references/sources/sp-800-171r2-to-800-53r4-mapping.md` — SP 800-171 Rev 2 Appendix D (Tables D-1–D-14), the parent SP 800-53 Rev 4 control(s) for each of the 110 requirements. Look the requirement up here first.
+- `references/sources/sp-800-53-rev4-cui-parents.md` — verbatim *Control* text and *Supplemental Guidance* for every one of those parent controls (SP 800-53 Rev 4, from NIST's OSCAL catalog). Quote from here first; cite as "<ID>, SP 800-53 Rev 4."
+
+**Secondary lens — SP 800-171 Rev 3 → SP 800-53 Rev 5.** Rev 3 restated the same requirement families against the current catalog, and Rev 5's *Discussion* is frequently fuller and clearer than Rev 4's *Supplemental Guidance* on the identical control. Use it to sharpen an interpretation, not to replace the default:
+
+- `references/sources/sp-800-171r3-to-800-53r5-mapping.md` — Rev 3 `03.xx.xx` (≈ Rev 2 `3.x.x`) → SP 800-53 Rev 5 parents. 33 Rev 2 requirements were consolidated in Rev 3 and have no direct row; for those, stay on the Rev 4 default.
+- `references/sources/sp-800-53-rev5-cui-parents.md` — verbatim *Control* text and *Discussion* for every Rev 5 parent under either mapping (~171). Cite as "SP 800-53 Rev 5" and say you are reading through the Rev 3 lens.
+
+For a control in neither set (Level 3 / 800-172 lineage, or a related control named inside a Discussion), fetch it from the NIST CPRT catalog (`csrc.nist.gov/projects/cprt`) or `csrc.nist.gov`, and say you did.
+
+An interpretive answer that never names or quotes the parent 800-53 control is incomplete. Lead with Rev 4; never silently blend the two catalogs — name the revision each quote came from.
 
 Two disciplines keep this honest:
 
 - **The 800-171 requirement is what gets assessed**, not the 800-53 control. Use the parent control to interpret intent, never to import obligations the requirement did not carry over. An assessor grades against SP 800-171A objectives. If you tell a client they must do something because 800-53 says so, and 800-171 doesn't, you have invented a requirement.
-- **Mind the revision.** The bundled mapping is SP 800-171 Rev 2 → SP 800-53 **Rev 4** (Appendix D's stated basis); the bundled parent-control text is **Rev 5**. Base-control identifiers and intent are stable across Rev 4→Rev 5, but wording was made outcome-based and several enhancements were renumbered, withdrawn, or merged (seven that Rev 2 cites are flagged WITHDRAWN in the parent-text file). Where it matters, check the Rev 4 text on `csrc.nist.gov` and say which revision you used.
+- **Mind the revision seam.** SP 800-171 Rev 2's Appendix D maps to SP 800-53 **Rev 4**; SP 800-171 Rev 3 maps to **Rev 5**. Base-control identifiers and intent are stable across Rev 4→Rev 5, but Rev 5 rewrote statements to be outcome-based, moved baselines to SP 800-53B, and renumbered/withdrew/merged several enhancements (seven that Rev 2 cites are flagged WITHDRAWN in the Rev 5 parent-text file, with their successor). The Rev 3 mapping is machine-derived from NIST's Rev 3 OSCAL, not a published crosswalk — reliable for *finding the control to interpret from*, not a compliance crosswalk.
 
 ## The derivation, by revision
 
@@ -89,4 +97,4 @@ SP 800-172 provides enhanced security requirements for CUI facing advanced persi
 
 ## Authoritative sources
 
-Use these, not vendor summaries: `csrc.nist.gov` and `nvlpubs.nist.gov` for the 800-53, 800-53B, 800-171, 800-171A, 800-172 and 800-172A publications and their supplemental spreadsheets (the Rev 2→Rev 3 change analysis and the CUI Overlay are both published there); the NIST CPRT catalog for structured control data; `ecfr.gov` for 32 CFR Part 170; `acquisition.gov` for DFARS clause text. The full text of 32 CFR Part 170 and the Assessment Guide's per-requirement discussion are bundled at `references/sources/32-cfr-part-170.md` and `references/sources/cmmc-assessment-guide-l2-v2.13.md` for direct quoting. The SP 800-171 Rev 2 → SP 800-53 mapping (Appendix D) and the verbatim text + Discussion of every parent SP 800-53 Rev 5 control are bundled at `references/sources/sp-800-171r2-to-800-53-mapping.md` and `references/sources/sp-800-53-rev5-cui-parents.md` — quote the parent Discussion from there rather than paraphrasing it.
+Use these, not vendor summaries: `csrc.nist.gov` and `nvlpubs.nist.gov` for the 800-53, 800-53B, 800-171, 800-171A, 800-172 and 800-172A publications and their supplemental spreadsheets (the Rev 2→Rev 3 change analysis and the CUI Overlay are both published there); the NIST CPRT catalog for structured control data; `ecfr.gov` for 32 CFR Part 170; `acquisition.gov` for DFARS clause text. The full text of 32 CFR Part 170 and the Assessment Guide's per-requirement discussion are bundled at `references/sources/32-cfr-part-170.md` and `references/sources/cmmc-assessment-guide-l2-v2.13.md` for direct quoting. The lineage material is bundled: `references/sources/sp-800-171r2-to-800-53r4-mapping.md` + `references/sources/sp-800-53-rev4-cui-parents.md` (default: Rev 2 → Rev 4, *Control* + *Supplemental Guidance*), and `references/sources/sp-800-171r3-to-800-53r5-mapping.md` + `references/sources/sp-800-53-rev5-cui-parents.md` (secondary lens: Rev 3 → Rev 5, *Control* + *Discussion*). Quote the parent guidance from there rather than paraphrasing it, and name the revision.
