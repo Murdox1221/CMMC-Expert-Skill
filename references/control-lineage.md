@@ -4,12 +4,20 @@
 
 SP 800-171 requirements are compressed. They were written as short, outcome-style statements derived from longer SP 800-53 controls, and the compression stripped out the reasoning. When a requirement says "periodically," "as needed," or "limit system access to authorized users," the text alone does not tell you what an assessor will expect — but the parent SP 800-53 control, with its supplemental guidance or discussion, usually does.
 
-So when an 800-171 requirement is ambiguous on its face, the move is: **find the parent control, read its discussion, and reason from the intent.** That is not freelancing. NIST built 800-171 by tailoring 800-53, published the mapping, and the discussion text is the closest thing to an official statement of what the requirement is trying to accomplish.
+So whenever the question is what a requirement *means* or *requires* — not only when it looks ambiguous — the move is: **find the parent control, read its Discussion, and reason from the intent.** That is not freelancing. NIST built 800-171 by tailoring 800-53, published the mapping, and the discussion text is the closest thing to an official statement of what the requirement is trying to accomplish.
+
+**This is bundled — use it, don't recall it.**
+
+- `references/sources/sp-800-171r2-to-800-53-mapping.md` — SP 800-171 Rev 2 Appendix D (Tables D-1–D-14), the parent SP 800-53 control(s) for each of the 110 requirements. Look the requirement up here first.
+- `references/sources/sp-800-53-rev5-cui-parents.md` — verbatim *Control* text and *Discussion* for every one of those parent controls (SP 800-53 Rev 5, from NIST's OSCAL catalog). Quote the Discussion from here and cite it by control ID and revision.
+- For a control outside that set (Level 3 / 800-172 lineage, or a related control named inside a Discussion), fetch it from the NIST CPRT catalog (`csrc.nist.gov/projects/cprt`) or SP 800-53 Rev 5 on `csrc.nist.gov`, and say you did.
+
+An interpretive answer that never names or quotes the parent 800-53 control is incomplete.
 
 Two disciplines keep this honest:
 
 - **The 800-171 requirement is what gets assessed**, not the 800-53 control. Use the parent control to interpret intent, never to import obligations the requirement did not carry over. An assessor grades against SP 800-171A objectives. If you tell a client they must do something because 800-53 says so, and 800-171 doesn't, you have invented a requirement.
-- **Pull the actual mapping rather than recalling it.** The mappings below are illustrative and the pairings in any given revision should be confirmed against the source tables named here before they go in front of a client or an assessor.
+- **Mind the revision.** The bundled mapping is SP 800-171 Rev 2 → SP 800-53 **Rev 4** (Appendix D's stated basis); the bundled parent-control text is **Rev 5**. Base-control identifiers and intent are stable across Rev 4→Rev 5, but wording was made outcome-based and several enhancements were renumbered, withdrawn, or merged (seven that Rev 2 cites are flagged WITHDRAWN in the parent-text file). Where it matters, check the Rev 4 text on `csrc.nist.gov` and say which revision you used.
 
 ## The derivation, by revision
 
@@ -81,4 +89,4 @@ SP 800-172 provides enhanced security requirements for CUI facing advanced persi
 
 ## Authoritative sources
 
-Use these, not vendor summaries: `csrc.nist.gov` and `nvlpubs.nist.gov` for the 800-53, 800-53B, 800-171, 800-171A, 800-172 and 800-172A publications and their supplemental spreadsheets (the Rev 2→Rev 3 change analysis and the CUI Overlay are both published there); the NIST CPRT catalog for structured control data; `ecfr.gov` for 32 CFR Part 170; `acquisition.gov` for DFARS clause text. The full text of 32 CFR Part 170 and the Assessment Guide's per-requirement discussion are bundled at `references/sources/32-cfr-part-170.md` and `references/sources/cmmc-assessment-guide-l2-v2.13.md` for direct quoting.
+Use these, not vendor summaries: `csrc.nist.gov` and `nvlpubs.nist.gov` for the 800-53, 800-53B, 800-171, 800-171A, 800-172 and 800-172A publications and their supplemental spreadsheets (the Rev 2→Rev 3 change analysis and the CUI Overlay are both published there); the NIST CPRT catalog for structured control data; `ecfr.gov` for 32 CFR Part 170; `acquisition.gov` for DFARS clause text. The full text of 32 CFR Part 170 and the Assessment Guide's per-requirement discussion are bundled at `references/sources/32-cfr-part-170.md` and `references/sources/cmmc-assessment-guide-l2-v2.13.md` for direct quoting. The SP 800-171 Rev 2 → SP 800-53 mapping (Appendix D) and the verbatim text + Discussion of every parent SP 800-53 Rev 5 control are bundled at `references/sources/sp-800-171r2-to-800-53-mapping.md` and `references/sources/sp-800-53-rev5-cui-parents.md` — quote the parent Discussion from there rather than paraphrasing it.
